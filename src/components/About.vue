@@ -2,12 +2,24 @@
 <template>
   <div id="about">
     这是关于组件
+    <button v-on:click="xx">回到首页</button>
   </div>
 </template>
 
 <script>
 export default {
-name: "About"
+name: "About",
+methods:{
+  xx(){
+    console.log('跳转到主页')
+    this.$router.push({
+      path:'/',
+      query:{
+        name:'Sam'
+      }
+    })//this指代组件
+  }
+}
 }
 </script>
 
